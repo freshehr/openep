@@ -95,7 +95,7 @@ Standards for the clinical structure and content of patient records (Complete do
 		["original_namespace"] = <"org.openehr">
 		["original_publisher"] = <"openEHR Foundation">
 		["custodian_namespace"] = <"org.openehr">
-		["MD5-CAM-1.0.1"] = <"3764905e5b3172cd9eb14e23b0b836c5">
+		["MD5-CAM-1.0.1"] = <"56c4e78cc21ec38f4dfab7525c76b51f">
 		["build_uid"] = <"93241d1b-825c-410b-bbf1-8b988652a902">
 		["revision"] = <"1.0.1">
 	>
@@ -117,12 +117,12 @@ definition
 						list = <
 							["1"] = <
 								units = <"1">
-								magnitude = <|>=0.0|>
+								magnitude = <|>=1.0|>
 							>
 						>
 					>
 					DV_INTERVAL<DV_QUANTITY> matches {
-						upper matches {
+						lower matches {
 							C_DV_QUANTITY <
 								property = <[openehr::380]>
 								list = <
@@ -133,7 +133,7 @@ definition
 								>
 							>
 						}
-						lower matches {
+						upper matches {
 							C_DV_QUANTITY <
 								property = <[openehr::380]>
 								list = <
@@ -155,8 +155,7 @@ definition
 			ELEMENT[at0135] occurrences matches {0..1} matches {    -- Dose formula
 				value matches {
 					DV_TEXT matches {*}
-					C_DV_QUANTITY <
-											>
+					DV_QUANTITY matches {*}
 				}
 			}
 			ELEMENT[at0178] occurrences matches {0..1} matches {    -- Dose description
